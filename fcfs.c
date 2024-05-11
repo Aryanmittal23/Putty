@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+#include<stdlib.h>
 #define max 30
 
 
@@ -15,11 +15,13 @@ void main()
         scanf("%d",&bt[i]);
     }
     printf("process\t burst time\t waiting time\t turn around time\n");
-    for(i=0;i<n;i++){
+    for(i=0;i<n;i++)
+    {
         wt[i]=0;
         tat[i]=0;
-        for(j=0;j<i;j++){
-            wt[i]=wt[i]+bt[i];
+        for(j=0;j<i;j++)
+        {
+            wt[i]=wt[i]+bt[j];
         }
         tat[i]=wt[i]+bt[i];
         awt=awt+wt[i];
